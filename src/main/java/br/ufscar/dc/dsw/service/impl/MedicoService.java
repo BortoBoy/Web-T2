@@ -17,8 +17,8 @@ public class MedicoService implements IMedicoService {
 	@Autowired
 	IMedicoDAO dao;
 	
-	public void salvar(Medico livro) {
-		dao.save(livro);
+	public void salvar(Medico medico) {
+		dao.save(medico);
 	}
 
 	public void excluir(Long id) {

@@ -7,7 +7,7 @@
 	<section class="layout-content" layout:fragment="corpo">
 
 		<div class="container" style="text-align: center;">
-			<h1>Consultas Médicas</h1>
+			<h3>Lista de médicos</h3>
 			<!-- <img alt="" th:src="@{/image/home-image.jpeg}" style="width:500px;"> -->
 		</div>
 
@@ -28,7 +28,7 @@
 						<tr th:each="medico : ${medicos}">
 							<td th:text="${medico.nome}"></td>
 							<td th:text="${medico.especialidade}"></td>
-							<td th:text="${medico.CRM}"></td>
+							<td th:text="${medico.crm}"></td>
 						</tr>
 					</tbody>
 				</table>

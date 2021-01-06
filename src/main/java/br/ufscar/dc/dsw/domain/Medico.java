@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 public class Medico extends AbstractEntity<Long> {
 	public enum Especialidades {
 	    CARDIOLOGISTA,
-	    PEDAITRA,
+	    PEDIATRA,
 	    GINECOLOGISTA,
 	    CIRURGIÂO,
 	    OFTALMOLOGISTA,

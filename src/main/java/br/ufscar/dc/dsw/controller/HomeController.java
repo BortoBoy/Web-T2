@@ -14,13 +14,9 @@ public class HomeController {
 	private IMedicoService medicoService;
 	
 	@GetMapping("/")
-	public String home() {
+	public String home(ModelMap model) {
+		model.addAttribute("medicos", medicoService.buscarTodos());
 		return "home";
 	}
 	
-	@GetMapping("/listar")
-	public String listar(ModelMap model) {
-		model.addAttribute("medicos", medicoService.buscarTodos());
-		return "medico/lista";
-	}
 }
