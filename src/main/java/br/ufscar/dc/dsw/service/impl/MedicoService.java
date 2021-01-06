@@ -6,16 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.ufscar.dc.dsw.dao.ILivroDAO;
 import br.ufscar.dc.dsw.domain.Medico;
-import br.ufscar.dc.dsw.service.spec.ILivroService;
+import br.ufscar.dc.dsw.dao.IMedicoDAO;
+import br.ufscar.dc.dsw.service.spec.IMedicoService;
 
 @Service
 @Transactional(readOnly = false)
-public class LivroService implements ILivroService {
+public class MedicoService implements IMedicoService {
 
 	@Autowired
-	ILivroDAO dao;
+	IMedicoDAO dao;
 	
 	public void salvar(Medico livro) {
 		dao.save(livro);

@@ -1,56 +1,71 @@
 package br.ufscar.dc.dsw.domain;
 
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Size;    
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "Paciente")
+@Table(name = "Pacientes")
 public class Paciente extends AbstractEntity<Long> {
     
+	public enum Sexos {
+	    MASCULINO,
+	    FEMENINO,
+	    OUTRO
+	}
+	
     @NotBlank
-    @Size(min = 6, max = 300, message = "{Size.email}")
+    @Size(min = 6, max = 300)
     @Column(nullable = false, unique = true)
     private String email;
 
     @NotBlank
-    @Size(min = 6, max = 100, message = "{Size.password}")
+    @Size(min = 6, max = 100)
     @Column(nullable = false, unique = false)
     private String senha;
 
     @NotBlank
-    @Size(max = 30, message = "{Size.cpf}")
+    @Size(max = 30)
     @Column(nullable = false, unique = true)
     private String cpf;
 
     @NotBlank
     @Size(min = 3, max = 60)
-    @Column(nullable = false, unique = false)
+    @Column(nullable = false)
     private String nome;
 
     @NotBlank
     @Size(min = 3, max = 60)
-    @Column(nullable = false, unique = false)
+    @Column(nullable = false)
     private String telefone;
 
-    @NotBlank
-    @Size(min = 3, max = 60)
-    @Column(nullable = false, unique = false)
-    private String sexo;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Sexos sexo;
 
-    @NotBlank
-    @Size(min = 3, max = 60)
-    @Column(nullable = false, unique = false)
-    private String data_de_nascimento;
+    @Min(1)
+	@Max(31)
+    private int dia;
+    
+    @Min(1)
+	@Max(12)
+    private int mes;
+    
+    @Min(1875)
+	@Max(2021)
+    private int ano;
 
     @ManyToMany
     @JoinTable(
@@ -60,71 +75,83 @@ public class Paciente extends AbstractEntity<Long> {
     )
     Set<Consulta> consultas;
 
+	public String getEmail() {
+		return email;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getSenha() {
+		return senha;
+	}
 
-    public String getSenha() {
-        return senha;
-    }
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+	public String getCpf() {
+		return cpf;
+	}
 
-    public String getCpf() {
-        return cpf;
-    }
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public String getTelefone() {
+		return telefone;
+	}
 
-    public String getTelefone() {
-        return telefone;
-    }
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+	public String getSexo() {
+		return sexo.name();
+	}
 
-    public String getSexo() {
-        return sexo;
-    }
+	public void setSexo(int sexo) {
+		this.sexo = Sexos.values()[sexo];
+	}
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getData_de_nascimento() {
-        return data_de_nascimento;
-    }
-
-    public void setData_de_nascimento(String data_de_nascimento) {
-        this.data_de_nascimento = data_de_nascimento;
-    }
-
-    public Set<Consulta> getConsultas() {
-        return consultas;
-    }
-
-    public void setConsultas(Set<Consulta> consultas) {
-        this.consultas = consultas;
-    }
-        
-        
+	public int getDia() {
+		return dia;
+	}
 	
+	public void setDia(int dia) {
+		this.dia = dia;
+	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	public Set<Consulta> getConsultas() {
+		return consultas;
+	}
+
+	public void setConsultas(Set<Consulta> consultas) {
+		this.consultas = consultas;
+	}
 }

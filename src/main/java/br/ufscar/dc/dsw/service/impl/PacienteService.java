@@ -6,16 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.ufscar.dc.dsw.dao.IEditoraDAO;
 import br.ufscar.dc.dsw.domain.Paciente;
-import br.ufscar.dc.dsw.service.spec.IEditoraService;
+import br.ufscar.dc.dsw.dao.IPacienteDAO;
+import br.ufscar.dc.dsw.service.spec.IPacienteService;
 
 @Service
 @Transactional(readOnly = false)
-public class EditoraService implements IEditoraService {
+public class PacienteService implements IPacienteService {
 
 	@Autowired
-	IEditoraDAO dao;
+	IPacienteDAO dao;
 	
 	public void salvar(Paciente editora) {
 		dao.save(editora);
@@ -35,8 +35,8 @@ public class EditoraService implements IEditoraService {
 		return dao.findAll();
 	}
 	
-	@Transactional(readOnly = true)
-	public boolean editoraTemLivros(Long id) {
-		return !dao.findById(id.longValue()).getLivros().isEmpty(); 
-	}
+//	@Transactional(readOnly = true)
+//	public boolean editoraTemLivros(Long id) {
+//		return !dao.findById(id.longValue()).getLivros().isEmpty(); 
+//	}
 }

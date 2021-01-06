@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import br.ufscar.dc.dsw.domain.Paciente;
 
 @SuppressWarnings("unchecked")
-public interface IEditoraDAO extends CrudRepository<Paciente, Long>{
+public interface IPacienteDAO extends CrudRepository<Paciente, Long>{
 
 	Paciente findById(long id);
 

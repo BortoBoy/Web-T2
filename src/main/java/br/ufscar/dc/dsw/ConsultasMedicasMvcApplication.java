@@ -1,66 +1,85 @@
 package br.ufscar.dc.dsw;
 
-import java.math.BigDecimal;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import br.ufscar.dc.dsw.dao.IEditoraDAO;
-import br.ufscar.dc.dsw.dao.ILivroDAO;
-import br.ufscar.dc.dsw.domain.Paciente;
+import br.ufscar.dc.dsw.dao.IMedicoDAO;
+import br.ufscar.dc.dsw.dao.IPacienteDAO;
 import br.ufscar.dc.dsw.domain.Medico;
+import br.ufscar.dc.dsw.domain.Paciente;
 
 @SpringBootApplication
-public class LivrariaMvcApplication {
+public class ConsultasMedicasMvcApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LivrariaMvcApplication.class, args);
+		SpringApplication.run(ConsultasMedicasMvcApplication.class, args);
 	}
-
+	
 	@Bean
-	public CommandLineRunner demo(IEditoraDAO editoraDAO, ILivroDAO livroDAO) {
+	public CommandLineRunner demo(IMedicoDAO medicoDAO, IPacienteDAO pacienteDAO) {
 		return (args) -> {
 						
-			Paciente e1 = new Paciente();
-			e1.setCNPJ("55.789.390/0008-99");
-			e1.setNome("Companhia das Letras");
-			editoraDAO.save(e1);
+			Medico m1 = new Medico();
+			m1.setEmail("medico1@gmail.com");
+			m1.setSenha("123123");
+			m1.setCrm("23123-SP");
+			m1.setNome("Carlos Alberto Albertinazzi");
+			m1.setEspecialidade(0);
+			medicoDAO.save(m1);
 			
-			Paciente e2 = new Paciente();
-			e2.setCNPJ("71.150.470/0001-40");
-			e2.setNome("Record");
-			editoraDAO.save(e2);
+			m1 = new Medico();
+			m1.setEmail("medico2@gmail.com");
+			m1.setSenha("123123");
+			m1.setCrm("12312-BA");
+			m1.setNome("Mia Congratulis Silva");
+			m1.setEspecialidade(1);
+			medicoDAO.save(m1);
 			
-			Paciente e3 = new Paciente();
-			e3.setCNPJ("32.106.536/0001-82");
-			e3.setNome("Objetiva");
-			editoraDAO.save(e3);
+			m1 = new Medico();
+			m1.setEmail("medico3@gmail.com");
+			m1.setSenha("123123");
+			m1.setCrm("542332-AC");
+			m1.setNome("Van Shwartchz");
+			m1.setEspecialidade(2);
+			medicoDAO.save(m1);
 			
-			Medico l1 = new Medico();
-			l1.setTitulo("Ensaio sobre a Cegueira");
-			l1.setAutor("José Saramago");
-			l1.setAno(1995);
-			l1.setPreco(BigDecimal.valueOf(54.9));
-			l1.setEditora(e1);
-			livroDAO.save(l1);
+			Paciente p = new Paciente();
+			p.setEmail("paciente1@gmail.com");
+			p.setSenha("123123");
+			p.setCpf("3215421743");
+			p.setNome("Gabriel Bortolote Pitarelli");
+			p.setTelefone("19996076736");
+			p.setDia(4);
+			p.setMes(6);
+			p.setAno(1998);
+			p.setSexo(Paciente.Sexos.MASCULINO.ordinal());
+			pacienteDAO.save(p);
 			
-			Medico l2 = new Medico();
-			l2.setTitulo("Cem anos de Solidão");
-			l2.setAutor("Gabriel Garcia Márquez");
-			l2.setAno(1977);
-			l2.setPreco(BigDecimal.valueOf(59.9));
-			l2.setEditora(e2);
-			livroDAO.save(l2);
+			p = new Paciente();
+			p.setEmail("paciente2@gmail.com");
+			p.setSenha("123123");
+			p.setCpf("342345321");
+			p.setNome("Pedro Stone Rocha");
+			p.setTelefone("99999999");
+			p.setDia(5);
+			p.setMes(7);
+			p.setAno(2002);
+			p.setSexo(Paciente.Sexos.OUTRO.ordinal());
+			pacienteDAO.save(p);
 			
-			Medico l3 = new Medico();
-			l3.setTitulo("Diálogos Impossíveis");
-			l3.setAutor("Luis Fernando Verissimo");
-			l3.setAno(2012);
-			l3.setPreco(BigDecimal.valueOf(22.9));
-			l3.setEditora(e3);
-			livroDAO.save(l3);
+			p = new Paciente();
+			p.setEmail("paciente3@gmail.com");
+			p.setSenha("123123");
+			p.setCpf("1231231231'");
+			p.setNome("Lara dos Santos");
+			p.setTelefone("54542323");
+			p.setDia(20);
+			p.setMes(12);
+			p.setAno(1885);
+			p.setSexo(Paciente.Sexos.FEMENINO.ordinal());
+			pacienteDAO.save(p);
 		};
 	}
 }

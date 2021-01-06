@@ -5,13 +5,13 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import br.ufscar.dc.dsw.domain.Paciente;
-import br.ufscar.dc.dsw.service.spec.IEditoraService;
+import br.ufscar.dc.dsw.service.spec.IPacienteService;
 
 @Component
 public class EditoraConversor implements Converter<String, Paciente>{
 
 	@Autowired
-	private IEditoraService service;
+	private IPacienteService service;
 	
 	@Override
 	public Paciente convert(String text) {

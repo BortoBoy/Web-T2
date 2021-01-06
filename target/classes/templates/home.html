@@ -7,9 +7,35 @@
 	<section class="layout-content" layout:fragment="corpo">
 
 		<div class="container" style="text-align: center;">
-			<h1>Livraria Virtual</h1>
-			<img alt="" th:src="@{/image/image.png}" style="width:500px;">
+			<h1>Consultas Médicas</h1>
+			<!-- <img alt="" th:src="@{/image/home-image.jpeg}" style="width:500px;"> -->
 		</div>
+
+		<div class="container" id="listagem">
+
+			<div th:replace="fragments/alert"></div>
+
+			<div class="table-responsive">
+				<table class="table table-striped table-hover table-sm">
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Especialidade</th>
+							<th>CRM</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="medico : ${medicos}">
+							<td th:text="${medico.nome}"></td>
+							<td th:text="${medico.especialidade}"></td>
+							<td th:text="${medico.CRM}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div th:replace="fragments/modal :: modal"></div>
 
 	</section>
 </body>

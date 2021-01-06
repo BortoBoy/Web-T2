@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.ufscar.dc.dsw.domain.Paciente;
 
-public interface IEditoraService {
+public interface IPacienteService {
 
 	Paciente buscarPorId(Long id);
 
@@ -14,5 +14,5 @@ public interface IEditoraService {
 
 	void excluir(Long id);
 	
-	boolean editoraTemLivros(Long id);
+//	boolean editoraTemLivros(Long id);
 }

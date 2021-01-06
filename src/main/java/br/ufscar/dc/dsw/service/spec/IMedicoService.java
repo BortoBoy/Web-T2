@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.ufscar.dc.dsw.domain.Medico;
 
-public interface ILivroService {
+public interface IMedicoService {
 
 	Medico buscarPorId(Long id);
 	

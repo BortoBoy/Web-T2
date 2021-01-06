@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import br.ufscar.dc.dsw.domain.Medico;
 
 @SuppressWarnings("unchecked")
-public interface ILivroDAO extends CrudRepository<Medico, Long>{
+public interface IMedicoDAO extends CrudRepository<Medico, Long>{
 
 	Medico findById(long id);
 
