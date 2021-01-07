@@ -1,5 +1,6 @@
 package br.ufscar.dc.dsw.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.dao.*;
 import org.springframework.security.config.annotation.authentication.builders.*;
@@ -7,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.*;
 import org.springframework.security.config.annotation.web.configuration.*;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import br.ufscar.dc.dsw.security.UserDetailsServiceImpl;
@@ -14,7 +16,10 @@ import br.ufscar.dc.dsw.security.UserDetailsServiceImpl;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
- 
+	
+	@Autowired
+	AuthenticationSuccessHandler successHandler;
+	
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsServiceImpl();
@@ -45,11 +50,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	   		.antMatchers("/", "/login/**", "/login/**", "/js/**", "/css/**").permitAll()
           	.antMatchers("/image/**", "/webjars/**").permitAll()
 	   		.antMatchers("/admin/**").hasRole("ADMIN")
-	   		.antMatchers("/user/**").hasRole("USER")
+	   		.antMatchers("/paciente/**").hasRole("PACIENTE")
+	   		.antMatchers("/medico/**").hasRole("MEDICO")
 	   		.anyRequest().authenticated()
 	   	.and()
 	   		.formLogin()
 	   		.loginPage("/login")
+	   		.successHandler(successHandler)
 	   		.permitAll()
 	   	.and()
 		   	.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
