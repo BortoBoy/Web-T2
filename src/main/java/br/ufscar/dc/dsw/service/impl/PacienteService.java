@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.ufscar.dc.dsw.domain.Medico;
 import br.ufscar.dc.dsw.domain.Paciente;
+import br.ufscar.dc.dsw.domain.User;
 import br.ufscar.dc.dsw.dao.IPacienteDAO;
+import br.ufscar.dc.dsw.dao.IUserDAO;
 import br.ufscar.dc.dsw.service.spec.IPacienteService;
 
 @Service
@@ -17,8 +20,8 @@ public class PacienteService implements IPacienteService {
 	@Autowired
 	IPacienteDAO dao;
 	
-	public void salvar(Paciente editora) {
-		dao.save(editora);
+	public void salvar(Paciente p) {
+		dao.save(p);
 	}
 
 	public void excluir(Long id) {
@@ -35,8 +38,4 @@ public class PacienteService implements IPacienteService {
 		return dao.findAll();
 	}
 	
-//	@Transactional(readOnly = true)
-//	public boolean editoraTemLivros(Long id) {
-//		return !dao.findById(id.longValue()).getLivros().isEmpty(); 
-//	}
 }

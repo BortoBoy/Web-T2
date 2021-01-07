@@ -1,6 +1,8 @@
 package br.ufscar.dc.dsw.domain;
 
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -8,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -15,7 +19,8 @@ import javax.validation.constraints.Size;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "Medicos")
-public class Medico extends AbstractEntity<Long> {
+@PrimaryKeyJoinColumn(name = "user_id")
+public class Medico extends User {
 	public enum Especialidades {
 	    CARDIOLOGISTA,
 	    PEDIATRA,
@@ -46,6 +51,10 @@ public class Medico extends AbstractEntity<Long> {
       inverseJoinColumns = @JoinColumn(name = "consulta_id")
     )
     Set<Consulta> consultas;
+
+	public void setEspecialidade(Especialidades especialidade) {
+		this.especialidade = especialidade;
+	}
 
 	public String getCrm() {
 		return crm;

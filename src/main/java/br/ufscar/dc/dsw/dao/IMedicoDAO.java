@@ -13,7 +13,7 @@ public interface IMedicoDAO extends CrudRepository<Medico, Long>{
 
 	List<Medico> findAll();
 	
-	Medico save(Medico livro);
+	Medico save(Medico medico);
 
 	void deleteById(Long id);
 

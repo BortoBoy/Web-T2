@@ -3,6 +3,7 @@ package br.ufscar.dc.dsw.service.spec;
 import java.util.List;
 
 import br.ufscar.dc.dsw.domain.Medico;
+import br.ufscar.dc.dsw.domain.User;
 
 public interface IMedicoService {
 
@@ -10,7 +11,7 @@ public interface IMedicoService {
 	
 	List<Medico> buscarTodos();
 	
-	void salvar(Medico livro);
+	void salvar(Medico medico);
 	
 	void excluir(Long id);
 
