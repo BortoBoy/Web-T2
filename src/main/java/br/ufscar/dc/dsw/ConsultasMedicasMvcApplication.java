@@ -101,6 +101,14 @@ public class ConsultasMedicasMvcApplication {
 			p.setRole("ROLE_PACIENTE");
 			p.setEnabled(true);
 			pacienteDAO.save(p);
+			
+			User u = new User();
+			u.setUsername("admin");
+			u.setPassword(encoder.encode("admin"));
+			u.setEnabled(true);
+			u.setRole("ROLE_ADMIN");
+			userDAO.save(u);
+			
 		};
 	}
 }
