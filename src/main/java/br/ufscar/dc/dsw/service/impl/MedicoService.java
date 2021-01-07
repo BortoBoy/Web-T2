@@ -34,4 +34,9 @@ public class MedicoService implements IMedicoService {
 	public List<Medico> buscarTodos() {
 		return dao.findAll();
 	}
+
+	@Override
+	public List<Medico> buscarPorEspecialidade(Medico.Especialidades especialidade) {
+		return dao.findByEspecialidade(especialidade);
+	}
 }

@@ -13,5 +13,7 @@ public interface IMedicoService {
 	void salvar(Medico livro);
 	
 	void excluir(Long id);
+
+	List<Medico> buscarPorEspecialidade(Medico.Especialidades especialidade);
 	
 }

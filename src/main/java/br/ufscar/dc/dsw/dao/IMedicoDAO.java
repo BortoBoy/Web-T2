@@ -16,4 +16,6 @@ public interface IMedicoDAO extends CrudRepository<Medico, Long>{
 	Medico save(Medico livro);
 
 	void deleteById(Long id);
+
+	List<Medico> findByEspecialidade(Medico.Especialidades e);
 }
