@@ -6,17 +6,20 @@
 <body>
 	<section class="layout-content" layout:fragment="corpo">
 		
-		<div class="container" id="listagem-pacientes">
+		<div class="container">
+		<h1>Gerenciamento de cadastros</h1>
 
-			<h3 th:text="#{admin.index.medico.list}"> </h3>
+			<h3 th:text="#{admin.index.paciente.list}"> </h3>
+			<a th:text="#{link.criar.label}" th:href="@{/admin/paciente/criar}"></a>
 			
 			<div class="table-responsive">
 				<table class="table table-striped table-hover table-sm">
 					<thead>
 						<tr>
-							<th class="bg-warning">Nome</th>
-							<th class="bg-warning">CPF</th>
-							<th class="bg-warning">Telefone</th>
+							<th class="bg-warning" th:text="#{attributes.nome}"></th>
+							<th class="bg-warning" th:text="#{attributes.cpf}"></th>
+							<th class="bg-warning" th:text="#{attributes.telefone}"></th>
+							<th class="bg-warning" th:text="#{admin.index.actions}"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -24,21 +27,29 @@
 							<td th:text="${p.nome}"></td>
 							<td th:text="${p.cpf}"></td>
 							<td th:text="${p.telefone}"></td>
+							<td>
+								<a th:text="#{link.editar.label}"
+									th:href="@{/admin/pacientes/editar/{id}(id=${p.id})}">
+								</a>
+								<a th:text="#{link.excluir.label}"
+									th:href="@{/admin/pacientes/excluir/{id}(id=${p.id})}">
+								</a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-		</div>
 		
-		<div class="container" id="listagem-medicos">
-			<h3 th:text="#{admin.index.paciente.list}"> </h3>
+			<h3 th:text="#{admin.index.medico.list}"> </h3>
+			<a th:text="#{link.criar.label}" th:href="@{/admin/medico/criar}"></a>
 			<div class="table-responsive">
 				<table class="table table-striped table-hover table-sm">
 					<thead>
 						<tr>
-							<th class="bg-warning">Nome</th>
-							<th class="bg-warning">CRM</th>
-							<th class="bg-warning">Especialidade</th>
+							<th class="bg-warning" th:text="#{attributes.nome}"></th>
+							<th class="bg-warning" th:text="#{attributes.crm}"></th>
+							<th class="bg-warning" th:text="#{attributes.especialidade}"></th>
+							<th class="bg-warning" th:text="#{admin.index.actions}"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -46,6 +57,14 @@
 							<td th:text="${m.nome}"></td>
 							<td th:text="${m.crm}"></td>
 							<td th:text="${m.especialidade}"></td>
+							<td>
+								<a th:text="#{link.editar.label}"
+									th:href="@{/admin/medicos/editar/{id}(id=${m.id})}">
+								</a>
+								<a th:text="#{link.excluir.label}"
+									th:href="@{/admin/medicos/excluir/{id}(id=${m.id})}">
+								</a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
