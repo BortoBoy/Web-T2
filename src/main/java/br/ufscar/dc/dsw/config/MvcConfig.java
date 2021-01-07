@@ -1,19 +1,20 @@
 package br.ufscar.dc.dsw.config;
 
-import org.springframework.context.annotation.ComponentScan;
+import java.util.Locale;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.format.FormatterRegistry;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import br.ufscar.dc.dsw.conversor.BigDecimalConversor;
-
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
-@ComponentScan(basePackages = "br.ufscar.dc.dsw.config")
 public class MvcConfig implements WebMvcConfigurer {
-    
-    @Override
-    public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(new BigDecimalConversor());
-    }
+
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/").setViewName("home");
+		registry.addViewController("/login").setViewName("login");
+	}
 }

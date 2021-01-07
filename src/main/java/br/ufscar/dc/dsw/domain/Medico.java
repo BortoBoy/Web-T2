@@ -24,16 +24,6 @@ public class Medico extends AbstractEntity<Long> {
 	    OFTALMOLOGISTA,
 	    CURANDEIRO
 	}
-	
-    @NotBlank
-    @Size(min = 6, max = 300)
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @NotBlank
-    @Size(min = 6, max = 100)
-    @Column(nullable = false)
-    private String senha;
     
     @NotBlank
     @Size(max = 30)
@@ -56,22 +46,6 @@ public class Medico extends AbstractEntity<Long> {
       inverseJoinColumns = @JoinColumn(name = "consulta_id")
     )
     Set<Consulta> consultas;
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
 
 	public String getCrm() {
 		return crm;

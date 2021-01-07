@@ -23,6 +23,10 @@
 </head>
 <body>
 
+	<header th:replace="fragments/header :: cabecalho">
+		<div>header</div>
+	</header>
+
 	<div class="layout-main">
 		<section layout:fragment="corpo">
 			<div>Conteúdo principal das páginas</div>

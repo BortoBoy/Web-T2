@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+		
+		<div class="container" id="listagem-pacientes">
+
+			<h3 th:text="#{admin.index.medico.list}"> </h3>
+			
+			<div class="table-responsive">
+				<table class="table table-striped table-hover table-sm">
+					<thead>
+						<tr>
+							<th class="bg-warning">Nome</th>
+							<th class="bg-warning">CPF</th>
+							<th class="bg-warning">Telefone</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="p : ${pacientes}">
+							<td th:text="${p.nome}"></td>
+							<td th:text="${p.cpf}"></td>
+							<td th:text="${p.telefone}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div class="container" id="listagem-medicos">
+			<h3 th:text="#{admin.index.paciente.list}"> </h3>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover table-sm">
+					<thead>
+						<tr>
+							<th class="bg-warning">Nome</th>
+							<th class="bg-warning">CRM</th>
+							<th class="bg-warning">Especialidade</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="m : ${medicos}">
+							<td th:text="${m.nome}"></td>
+							<td th:text="${m.crm}"></td>
+							<td th:text="${m.especialidade}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div th:replace="fragments/modal :: modal"></div>
+	</section>
+</body>
+</html>
