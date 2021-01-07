@@ -5,6 +5,7 @@
 </head>
 <body>
 	<section class="layout-content" layout:fragment="corpo">
+	
 
 		<div class="container" style="text-align: center;">
 			<h3>Lista de médicos</h3>
@@ -12,7 +13,7 @@
 		</div>
 		
 		<div class="container">
-			<label for="cars">Choose a car:</label>
+			<label th:text="#{home.filter.label}"></label>
 			<select name="cars" id="cars" onchange="window.location.href = '?filter='+this.value;">
 				<option selected="selected" value=""></option>
 				<option value="Todos">TODOS</option>
@@ -44,6 +45,9 @@
 			</table>
 		</div>
 
+		<div class="container" style="text-align: right;">
+			<a th:text="#{home.links.admin}" th:href="@{/admin/index}"></a>
+		</div>
 		<div th:replace="fragments/modal :: modal"></div>
 
 	</section>
