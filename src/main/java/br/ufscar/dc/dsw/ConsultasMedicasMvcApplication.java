@@ -32,7 +32,7 @@ public class ConsultasMedicasMvcApplication {
 			Medico m = new Medico();
 			m.setCrm("23123-SP");
 			m.setNome("Carlos Alberto Albertinazzi");
-			m.setEspecialidade(0);
+			m.setEspecialidade(Medico.Especialidades.CIRURGIAO);
 			m.setUsername("medico1@email.com");
 			m.setPassword(encoder.encode("123123"));
 			m.setRole("ROLE_MEDICO");
@@ -42,7 +42,7 @@ public class ConsultasMedicasMvcApplication {
 			m = new Medico();
 			m.setCrm("12312-BA");
 			m.setNome("Mia Congratulis Silva");
-			m.setEspecialidade(1);
+			m.setEspecialidade(Medico.Especialidades.PEDIATRA);
 			m.setUsername("medico2@email.com");
 			m.setPassword(encoder.encode("123123"));
 			m.setRole("ROLE_MEDICO");
@@ -52,7 +52,7 @@ public class ConsultasMedicasMvcApplication {
 			m = new Medico();
 			m.setCrm("542332-AC");
 			m.setNome("Van Shwartchz");
-			m.setEspecialidade(2);
+			m.setEspecialidade(Medico.Especialidades.CURANDEIRO);
 			m.setUsername("medico3@email.com");
 			m.setPassword(encoder.encode("123123"));
 			m.setRole("ROLE_MEDICO");
@@ -67,7 +67,7 @@ public class ConsultasMedicasMvcApplication {
 			p.setDia(4);
 			p.setMes(6);
 			p.setAno(1998);
-			p.setSexo(Paciente.Sexos.MASCULINO.ordinal());
+			p.setSexo(Paciente.Sexos.MASCULINO);
 			p.setUsername("paciente1@email.com");
 			p.setPassword(encoder.encode("123123"));
 			p.setRole("ROLE_PACIENTE");
@@ -81,7 +81,7 @@ public class ConsultasMedicasMvcApplication {
 			p.setDia(5);
 			p.setMes(7);
 			p.setAno(2002);
-			p.setSexo(Paciente.Sexos.OUTRO.ordinal());
+			p.setSexo(Paciente.Sexos.OUTRO);
 			p.setUsername("paciente2@email.com");
 			p.setPassword(encoder.encode("123123"));
 			p.setRole("ROLE_PACIENTE");
@@ -95,7 +95,7 @@ public class ConsultasMedicasMvcApplication {
 			p.setDia(20);
 			p.setMes(12);
 			p.setAno(1885);
-			p.setSexo(Paciente.Sexos.FEMENINO.ordinal());
+			p.setSexo(Paciente.Sexos.FEMENINO);
 			p.setUsername("paciente3@email.com");
 			p.setPassword(encoder.encode("123123"));
 			p.setRole("ROLE_PACIENTE");

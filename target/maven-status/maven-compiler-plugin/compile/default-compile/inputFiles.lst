@@ -5,6 +5,7 @@
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/impl/MedicoService.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/domain/User.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/dao/IPacienteDAO.java
+/home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/security/CustomSuccessHandler.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/impl/PacienteService.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/domain/Medico.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/config/MvcConfig.java

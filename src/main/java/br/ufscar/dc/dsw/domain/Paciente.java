@@ -93,12 +93,12 @@ public class Paciente extends User {
 		this.telefone = telefone;
 	}
 
-	public String getSexo() {
-		return sexo.name();
+	public Sexos getSexo() {
+		return sexo;
 	}
 
-	public void setSexo(int sexo) {
-		this.sexo = Sexos.values()[sexo];
+	public void setSexo(Sexos sexo) {
+		this.sexo = sexo;
 	}
 
 	public int getDia() {

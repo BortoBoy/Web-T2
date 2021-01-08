@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+		<div class="container">
+			<form
+				th:action="${medico.id == null} ? @{/admin/medico/salvar} : @{/admin/medico/editar}"
+				th:object="${medico}" method="POST">
+			
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label th:text="#{attributes.nome}" for="nome"></label> 
+						<input type="text" class="form-control" id="nome"
+							th:placeholder="#{attributes.nome}"
+							autofocus="autofocus" th:field="*{nome}"
+							th:classappend="${#fields.hasErrors('nome')} ? is-invalid" />
+						<div class="invalid-feedback">
+							<span th:errors="*{nome}"></span>
+						</div>
+					</div>
+					
+					<div class="form-group col-md-6">
+						<label th:text="#{attributes.crm}" for="crm"></label> 
+						<input type="text" class="form-control" id="crm"
+							th:placeholder="#{attributes.crm}"
+							autofocus="autofocus" th:field="*{crm}"
+							th:classappend="${#fields.hasErrors('crm')} ? is-invalid" />
+						<div class="invalid-feedback">
+							<span th:errors="*{crm}"></span>
+						</div>
+					</div>
+					
+					<div class="form-group col-md-6">
+						<label th:text="#{attributes.email}" for="email"></label> 
+						<input type="email" class="form-control" id="email"
+							th:placeholder="#{attributes.email}"
+							autofocus="autofocus" th:field="*{username}"
+							th:classappend="${#fields.hasErrors('username')} ? is-invalid" />
+						<div class="invalid-feedback">
+							<span th:errors="*{username}"></span>
+						</div>
+					</div>
+					
+					<div class="form-group col-md-6">
+						<label th:text="#{attributes.especialidade}" for="especialidade"></label> 
+						<select 
+							class="form-control"
+							id="especialidade"
+							autofocus="autofocus"
+							th:field="*{especialidade}"
+							th:classappend="${#fields.hasErrors('especialidade')} ? is-invalid">
+							
+						    <option th:each="especialidadeOpt: ${especialidades}" 
+						        th:value="${especialidadeOpt}"
+						        th:text="${especialidadeOpt}">
+						    </option>
+						</select>
+						<div class="invalid-feedback">
+							<span th:errors="*{especialidade}"></span>
+						</div>
+					</div>
+					
+					<div class="form-group col-md-6">
+						<label th:text="#{attributes.senha}" for="senha"></label> 
+						<input type="password" class="form-control" id="senha"
+							th:placeholder="#{attributes.senha}"
+							autofocus="autofocus" th:field="*{password}"
+							th:classappend="${#fields.hasErrors('password')} ? is-invalid" />
+						<div class="invalid-feedback">
+							<span th:errors="*{password}"></span>
+						</div>
+					</div>
+				</div>
+			
+				<input type="hidden" id="id" th:field="*{id}" />
+				<button type="submit" th:text="#{button.salvar.label}"
+					class="btn btn-primary btn-sm"></button>
+			</form>
+		</div>
+		<div th:replace="fragments/modal :: modal"></div>
+	</section>
+</body>
+		

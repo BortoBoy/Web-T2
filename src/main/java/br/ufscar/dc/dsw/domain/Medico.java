@@ -25,7 +25,7 @@ public class Medico extends User {
 	    CARDIOLOGISTA,
 	    PEDIATRA,
 	    GINECOLOGISTA,
-	    CIRURGIÂO,
+	    CIRURGIAO,
 	    OFTALMOLOGISTA,
 	    CURANDEIRO
 	}
@@ -71,13 +71,10 @@ public class Medico extends User {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 
-	public String getEspecialidade() {
-		return especialidade.name();
-	}
-
-	public void setEspecialidade(int especialidade) {
-		this.especialidade = Especialidades.values()[especialidade];
+	public Especialidades getEspecialidade() {
+		return especialidade;
 	}
 
 	public Set<Consulta> getConsultas() {

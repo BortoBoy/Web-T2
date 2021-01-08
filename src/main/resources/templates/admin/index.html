@@ -7,7 +7,7 @@
 	<section class="layout-content" layout:fragment="corpo">
 		
 		<div class="container">
-		<h1>Gerenciamento de cadastros</h1>
+		<h1 th:text="#{admin.title}"></h1>
 
 			<h3 th:text="#{admin.index.paciente.list}"> </h3>
 			<a th:text="#{link.criar.label}" th:href="@{/admin/paciente/criar}"></a>
@@ -29,10 +29,10 @@
 							<td th:text="${p.telefone}"></td>
 							<td>
 								<a th:text="#{link.editar.label}"
-									th:href="@{/admin/pacientes/editar/{id}(id=${p.id})}">
+									th:href="@{/admin/paciente/editar/{id}(id=${p.id})}">
 								</a>
 								<a th:text="#{link.excluir.label}"
-									th:href="@{/admin/pacientes/excluir/{id}(id=${p.id})}">
+									th:href="@{/admin/paciente/excluir/{id}(id=${p.id})}">
 								</a>
 							</td>
 						</tr>
@@ -59,10 +59,10 @@
 							<td th:text="${m.especialidade}"></td>
 							<td>
 								<a th:text="#{link.editar.label}"
-									th:href="@{/admin/medicos/editar/{id}(id=${m.id})}">
+									th:href="@{/admin/medico/editar/{id}(id=${m.id})}">
 								</a>
 								<a th:text="#{link.excluir.label}"
-									th:href="@{/admin/medicos/excluir/{id}(id=${m.id})}">
+									th:href="@{/admin/medico/excluir/{id}(id=${m.id})}">
 								</a>
 							</td>
 						</tr>
