@@ -13,7 +13,7 @@ public interface IPacienteDAO extends CrudRepository<Paciente, Long>{
 
 	List<Paciente> findAll();
 	
-	Paciente save(Paciente editora);
+	Paciente save(Paciente p);
 
 	void deleteById(Long id);
 }

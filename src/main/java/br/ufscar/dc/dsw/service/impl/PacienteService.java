@@ -10,7 +10,7 @@ import br.ufscar.dc.dsw.domain.Medico;
 import br.ufscar.dc.dsw.domain.Paciente;
 import br.ufscar.dc.dsw.domain.User;
 import br.ufscar.dc.dsw.dao.IPacienteDAO;
-import br.ufscar.dc.dsw.dao.IUserDAO;
+import br.ufscar.dc.dsw.dao.IConsultaDAO;
 import br.ufscar.dc.dsw.service.spec.IPacienteService;
 
 @Service

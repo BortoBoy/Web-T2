@@ -13,11 +13,11 @@ import javax.validation.constraints.Min;
 @Table(name = "Consultas")
 public class Consulta extends AbstractEntity<Long> {
     
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "medico_id", referencedColumnName = "id")
     private Medico medico;
     
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "paciente_id", referencedColumnName = "id")
     private Paciente paciente;
     

@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -19,7 +20,7 @@ import javax.validation.constraints.Size;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "Medicos")
-@PrimaryKeyJoinColumn(name = "user_id")
+@PrimaryKeyJoinColumn(name = "userId")
 public class Medico extends User {
 	public enum Especialidades {
 	    CARDIOLOGISTA,
@@ -44,13 +45,6 @@ public class Medico extends User {
     @Column(nullable = false)
     private Especialidades especialidade;
     
-    @ManyToMany
-    @JoinTable(
-      name = "medico_consultas", 
-      joinColumns = @JoinColumn(name = "medico_id"), 
-      inverseJoinColumns = @JoinColumn(name = "consulta_id")
-    )
-    Set<Consulta> consultas;
 
 	public void setEspecialidade(Especialidades especialidade) {
 		this.especialidade = especialidade;
@@ -77,13 +71,6 @@ public class Medico extends User {
 		return especialidade;
 	}
 
-	public Set<Consulta> getConsultas() {
-		return consultas;
-	}
-
-	public void setConsultas(Set<Consulta> consultas) {
-		this.consultas = consultas;
-	}
     
     
 }

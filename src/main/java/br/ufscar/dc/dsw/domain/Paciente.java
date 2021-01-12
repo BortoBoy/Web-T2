@@ -21,7 +21,7 @@ import javax.validation.constraints.Size;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "Pacientes")
-@PrimaryKeyJoinColumn(name = "user_id")
+@PrimaryKeyJoinColumn(name = "userId")
 public class Paciente extends User {
     
 	public enum Sexos {
@@ -60,14 +60,6 @@ public class Paciente extends User {
     @Min(1875)
 	@Max(2021)
     private int ano;
-
-    @ManyToMany
-    @JoinTable(
-      name = "paciente_consultas", 
-      joinColumns = @JoinColumn(name = "paciente_id"), 
-      inverseJoinColumns = @JoinColumn(name = "consulta_id")
-    )
-    Set<Consulta> consultas;
 
 	public String getCpf() {
 		return cpf;
@@ -125,11 +117,4 @@ public class Paciente extends User {
 		this.ano = ano;
 	}
 
-	public Set<Consulta> getConsultas() {
-		return consultas;
-	}
-
-	public void setConsultas(Set<Consulta> consultas) {
-		this.consultas = consultas;
-	}
 }

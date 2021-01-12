@@ -16,5 +16,5 @@ public interface IMedicoService {
 	void excluir(Long id);
 
 	List<Medico> buscarPorEspecialidade(Medico.Especialidades especialidade);
-	
+
 }

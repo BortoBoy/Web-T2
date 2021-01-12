@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import br.ufscar.dc.dsw.domain.Medico;
 import br.ufscar.dc.dsw.domain.User;
 import br.ufscar.dc.dsw.dao.IMedicoDAO;
-import br.ufscar.dc.dsw.dao.IUserDAO;
+import br.ufscar.dc.dsw.dao.IConsultaDAO;
 import br.ufscar.dc.dsw.service.spec.IMedicoService;
 
 @Service

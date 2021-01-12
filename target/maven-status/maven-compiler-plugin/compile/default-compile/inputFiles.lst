@@ -1,13 +1,16 @@
+/home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/controller/APIController.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/dao/IMedicoDAO.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/controller/ErrorViewController.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/controller/MedicoController.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/config/WebSecurityConfig.java
+/home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/dao/IConsultaDAO.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/impl/MedicoService.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/domain/User.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/dao/IPacienteDAO.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/security/CustomSuccessHandler.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/impl/PacienteService.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/domain/Medico.java
+/home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/spec/IConsultaService.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/config/MvcConfig.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/conversor/BigDecimalConversor.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/conversor/EditoraConversor.java
@@ -18,9 +21,8 @@
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/dao/IUserDAO.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/domain/Paciente.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/controller/AdminController.java
+/home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/impl/ConsultaService.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/security/MyUserDetails.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/spec/IMedicoService.java
-/home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/spec/IUserService.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/spec/IPacienteService.java
 /home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/domain/Consulta.java
-/home/borto/Documents/UFSCar/WEB/T2/ConsultasMedicasMVC/src/main/java/br/ufscar/dc/dsw/service/impl/UserService.java

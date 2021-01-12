@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+	
+
+		<div class="container" style="text-align: center;">
+			<h3>Consultas</h3>
+		</div>
+		
+		<div th:replace="fragments/alert"></div>
+
+		<div class="table-responsive">
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th th:text="#{attributes.paciente}"></th>
+						<th th:text="#{attributes.dia}"></th>
+						<th th:text="#{attributes.hora}"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="consulta : ${consultas}">
+						<td th:text="${consulta.paciente.nome}"></td>
+						<td>
+							<span th:text="${consulta.dia}"></span>
+							<span th:text="${consulta.mes}"></span>
+							<span th:text="${consulta.ano}"></span>
+						</td>
+						<td>
+							<span th:text="${consulta.minuto}"></span>
+							<span th:text="${consulta.hora}"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="container" style="text-align: right;">
+			<a th:text="#{home.links.admin}" th:href="@{/admin/index}"></a>
+		</div>
+		<div th:replace="fragments/modal :: modal"></div>
+
+	</section>
+</body>
+</html>

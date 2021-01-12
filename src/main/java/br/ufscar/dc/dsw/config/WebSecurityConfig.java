@@ -2,6 +2,7 @@ package br.ufscar.dc.dsw.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.*;
 import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.*;
@@ -46,12 +47,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	http.authorizeRequests()
+    	http.csrf().disable().authorizeRequests()
+	    	.antMatchers(HttpMethod.GET, "/medicos/**", "/pacientes/**").permitAll()
+	    	.antMatchers(HttpMethod.POST, "/medicos/**", "/pacientes/**").permitAll()
+	    	.antMatchers(HttpMethod.PUT, "/medicos/**", "/pacientes/**").permitAll()
+	    	.antMatchers(HttpMethod.DELETE, "/medicos/**", "/pacientes/**").permitAll()
+	    	.antMatchers("/admin/**").hasRole("ADMIN")
 	   		.antMatchers("/", "/login/**", "/login/**", "/js/**", "/css/**").permitAll()
           	.antMatchers("/image/**", "/webjars/**").permitAll()
-	   		.antMatchers("/admin/**").hasRole("ADMIN")
-	   		.antMatchers("/paciente/**").hasRole("PACIENTE")
-	   		.antMatchers("/medico/**").hasRole("MEDICO")
 	   		.anyRequest().authenticated()
 	   	.and()
 	   		.formLogin()
